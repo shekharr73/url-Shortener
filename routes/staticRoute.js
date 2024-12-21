@@ -1,12 +1,11 @@
 const express = require('express')
-const { applyVirtuals } = require('../models/url');
-const URL = require('../models/url'); // Importing the URL model
- 
-const router = express.Router()
 
-router.get('/', async(req, res) => {
+const router = express.Router();
+const URL = require('../models/url'); // Importing the URL model
+
+router.get('/' , async(req, res)=>{
     const allUrls = await URL.find({})
-    return res.render("home", {
+    return res.render("home",{
         urls: allUrls,
     })
 })
