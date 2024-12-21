@@ -12,7 +12,7 @@ connectToMongoDB('mongodb://127.0.0.1:27017/short-url')
 .then (()=> console.log("MongoDB connected"))
 
 app.set("view engine", "ejs")
-app.set("views", path.resolve("./views"))
+app.set("views", path.resolve("./view"))
 
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
