@@ -22,6 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/url", urlRoute);
+app.use("/user", urlRoute);
 app.use("/", staticRoute);
 
 // Server Side Rendering ->
