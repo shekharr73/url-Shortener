@@ -17,9 +17,11 @@ async function handleUserLogin(req, res) {
     return res.render("login", {
       error: "Invalid Username or Password"
     });
+    
+    return res.redirect("/");
 }
 
-return res.redirect("/");
+
 
 module.exports = {
   handleUserSignup,

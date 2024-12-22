@@ -11,7 +11,7 @@ const userRoute = require("./routes/user");
 const app = express();
 const PORT = 8001;
 
-connectToMongoDB("mongodb://127.0.0.1:27017/short-url").then(() =>
+connectToMongoDB("mongodb://127.0.0.1:27017/urlShortener").then(() =>
   console.log("MongoDB connected")
 );
 
@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/url", urlRoute);
-app.use("/user", urlRoute);
+app.use("/user", userRoute);
 app.use("/", staticRoute);
 
 // Server Side Rendering ->
