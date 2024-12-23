@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
     <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
+        body{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
     </style>
-  </head>
-  <body style="justify-items: center; margin-top: 200px">
-    <h1>User Signup</h1>
+</head>
+<body>
+    <h1>Sign Up</h1>
     <form action="/user" method="post">
+        <label for="">Full Name</label>
+        <input type="text" required name="name"><br>
 
-      <label for="input">Full Name</label>
-      <input type="Fullname" placeholder="your Fullname" required name = "name" /> <br />
-      <br />
-      <label for="input">Email</label>
-      <input type="email" placeholder="your email" required name = "email" /> <br />
-      <br />
-      <label for="input">Password</label>
-      <input type="password" placeholder="your password" required name = "password" /> <br /><br />
-      
-      <button type="submit">Signup</button>
+        <label for="">Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="email" required name="email"><br>
+
+        <label for="">Password&nbsp;</label>
+        <input type="password" required name="password"><br>
+
+        <button type="submit">Signup</button>
     </form>
-  </body>
+</body>
 </html>
