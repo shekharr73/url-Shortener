@@ -31,29 +31,10 @@ app.use("/user", userRoute)
 // For ease we use EJS
 app.get('/test' , async(req , res)=>{
   const allUrls = await URL.find({});
-  // return res.end(`
-  //   <html>
-  //     <head></head>
-  //     <body>
-  //       <ol>
-  //         ${allUrls.map( url => `<li>
-  //           ${url.shortId} - 
-  //           ${url.redirectURL} - 
-  //           ${url.visitHistory.length}</li>`
-  //           ).join("")
-  //           }
-  //       </ol>
-  //     </body>
-  //   </html>`
-    
-  // )
-  
   return res.render('home',{
     urls: allUrls,
   })
 })
-
-
 
 app.get("/url/:shortId", async (req, res) => {
     const shortId = req.params.shortId;
@@ -69,6 +50,11 @@ app.get("/url/:shortId", async (req, res) => {
         },
       }
     );
+
+    if (!entry) {
+        return res.status(404).send("URL not found");
+    }
+
     res.redirect(entry.redirectURL); 
  });
 
