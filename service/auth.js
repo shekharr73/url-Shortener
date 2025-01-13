@@ -1,13 +1,23 @@
+//Removing state and importing JWT
+
 const jwt = require("jsonwebtoken");
 const secret = "Shekhar$123@$"
 
 function setUser( user){
-    return jwt.sign(user, secret);
+    return jwt.sign({
+        _id: user._id,
+        email: user.email,
+    }, secret);
+    //assigning user object as a payload
 }
 
 function getUser(token){
-    if(!token) return null;
-    return jwt.verify(token, secret)
+    try {
+        return jwt.verify(token, secret);
+    } catch (error) {
+        return null;
+    }
+   
 }
 
 module.exports={
